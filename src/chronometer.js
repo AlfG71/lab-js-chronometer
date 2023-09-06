@@ -6,16 +6,12 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    if (printTimeCallback) {
-      this.intervalId = setInterval(() => {
-        this.currentTime += 1;
+    this.intervalId = setInterval(() => {
+      this.currentTime += 1;
+      if (printTimeCallback) {
         printTimeCallback();
-      }, 1000);
-    } else {
-      this.intervalId = setInterval(() => {
-        this.currentTime += 1;
-      }, 1000);
-    }
+      }
+    }, 1000);
   }
 
   getMinutes() {
